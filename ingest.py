@@ -4,7 +4,7 @@ from typing import List
 
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
@@ -54,12 +54,13 @@ def build_chroma(
         embedding_function=embeddings,
     )
 
-    # Add docs to collection
     vectordb.add_documents(chunks)
 
-    # Persist to disk (Chroma local)
-    vectordb.persist()
+    #  No persist() needed in newer versions.
+    # Data is persisted automatically because persist_directory is set.
+
     return vectordb
+
 
 
 def main():

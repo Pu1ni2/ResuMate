@@ -57,7 +57,8 @@ def retrieve_node_factory(vectordb: Chroma, k: int = 6):
 
     def retrieve(state: RAGState):
         q = state["question"]
-        docs = retriever.get_relevant_documents(q)
+       # docs = retriever.get_relevant_documents(q)
+        docs = retriever.invoke(q)
         return {"context": format_docs(docs)}
 
     return RunnableLambda(retrieve)
