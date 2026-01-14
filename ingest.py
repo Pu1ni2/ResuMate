@@ -9,6 +9,10 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
 
+
+
+
+
 def load_documents(resume_path: str, bio_path: str):
     if not os.path.exists(resume_path):
         raise FileNotFoundError(f"Missing resume PDF: {resume_path}")

@@ -8,7 +8,32 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
+from ingest import load_documents, chunk_documents, build_chroma
 
+
+
+chroma_dir = os.getenv("CHROMA_DIR", "chroma_db")
+collection_name = os.getenv("CHROMA_COLLECTION", "about_me")
+
+if not os.path.exists(chroma_dir):
+    st.info("Chroma DB not found. Building it now from resume.pdf and details.txt...")
+
+    with st.spinner("Ingesting documents and building vector DB..."):
+        resume_path = os.getenv("RESUME_PATH", "resume.pdf")
+        bio_path = os.getenv("BIO_PATH", "details.txt")
+
+        docs = load_documents(resume_path, bio_path)
+        chunks = chunk_documents(docs)
+
+        build_chroma(
+            chunks=chunks,
+            persist_dir=chroma_dir,
+            collection_name=collection_name,
+            reset=False,
+        )
+
+    st.success("Chroma DB built successfully. Reloading app...")
+    st.rerun()
 
 
 def get_vectordb():
