@@ -56,13 +56,12 @@ def build_chroma(
 
     vectordb.add_documents(chunks)
 
-    # Data is persisted automatically because persist_directory is set.
 
     return vectordb
 
 
 def main():
-    load_dotenv()  # reads .env if present
+    load_dotenv() 
     if not os.getenv("OPENAI_API_KEY"):
         raise EnvironmentError(
             "OPENAI_API_KEY not found. Set it in your environment or a .env file."

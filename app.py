@@ -10,9 +10,7 @@ from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 
 
-# ----------------------------
-# 1) Vectorstore / Retriever
-# ----------------------------
+
 def get_vectordb():
     persist_dir = os.getenv("CHROMA_DIR", "chroma_db")
     collection_name = os.getenv("CHROMA_COLLECTION", "about_me")
@@ -36,9 +34,7 @@ def format_docs(docs: List[Document]) -> str:
     return "\n\n---\n\n".join(blocks)
 
 
-# ----------------------------
-# 2) RAG Chain (LangChain only)
-# ----------------------------
+
 def build_rag_components(k: int = 6):
     vectordb = get_vectordb()
     retriever = vectordb.as_retriever(search_kwargs={"k": k})
@@ -46,7 +42,7 @@ def build_rag_components(k: int = 6):
     system_prompt = """
 You are a professional recruiter / personal assistant representing the candidate.
 Answer questions about the candidate using ONLY the provided context (resume + personal bio).
-Be confident, concise, and professional.
+Be confident, concise, and professional. Answer in detailed ,refer both resume and bio.
 
 Rules:
 - If the answer is not in the context, say you don't have that information.
@@ -71,30 +67,28 @@ Rules:
 
 
 def retrieve_context(retriever, question: str) -> str:
-    # New LangChain API
+    
     docs = retriever.invoke(question)
     return format_docs(docs)
 
 
-# ----------------------------
-# 3) Streamlit UI
-# ----------------------------
+
 def main():
     load_dotenv()
     if not os.getenv("OPENAI_API_KEY"):
         st.error("OPENAI_API_KEY not found. Set it in your environment or a .env file.")
         st.stop()
 
-    st.set_page_config(page_title="Ask About Me (RAG)", page_icon="🧠", layout="centered")
-    st.title("🧠 Ask About Me (RAG) — LangChain")
-    st.caption("Answers are grounded in your resume.pdf + details.txt via ChromaDB (local).")
+    st.set_page_config(page_title="ResuMate", page_icon="🧠", layout="centered")
+    st.title("🧠ResuMate")
+    st.caption("")
 
     chroma_dir = os.getenv("CHROMA_DIR", "chroma_db")
     if not os.path.exists(chroma_dir):
         st.warning("Chroma DB not found. Run `python ingest.py` first.")
         st.stop()
 
-    # Cache heavy objects
+ 
     @st.cache_resource
     def _load_components():
         return build_rag_components(k=6)
@@ -102,17 +96,16 @@ def main():
     retriever, prompt, llm = _load_components()
 
     question = st.text_input(
-        "Ask a question about the candidate:",
+        "Ask a question about Punith:",
         placeholder="e.g., What are my strongest skills for an AI Engineer role?",
     )
     go = st.button("Ask")
 
     if go and question.strip():
-        # Optional: show retrieved context (debug)
+        
         with st.spinner("Retrieving relevant context..."):
             context = retrieve_context(retriever, question.strip())
 
-        # (Optional) Uncomment to see context in UI
         # with st.expander("Retrieved Context"):
         #     st.text(context)
 
