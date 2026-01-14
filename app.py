@@ -12,6 +12,14 @@ from ingest import load_documents, chunk_documents, build_chroma
 
 
 
+if "OPENAI_API_KEY" in st.secrets:
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    
+if not os.getenv("OPENAI_API_KEY"):
+    st.error("OPENAI_API_KEY not found. Add it in Streamlit → Settings → Secrets.")
+    st.stop()
+
+
 chroma_dir = os.getenv("CHROMA_DIR", "chroma_db")
 collection_name = os.getenv("CHROMA_COLLECTION", "about_me")
 
