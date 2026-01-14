@@ -1,0 +1,80 @@
+Question: What is your full name?
+Answer: My name is Punith Kolla.
+
+Question: Where are you studying right now?
+Answer: I am pursuing a Master of Science in Artificial Intelligence at Northeastern University in Boston.
+
+Question: What is your academic focus?
+Answer: My focus is on applied AI and generative AI, including NLP, deep learning, reinforcement learning, and building real-world AI systems.
+
+Question: What kind of roles are you targeting?
+Answer: I am targeting AI Engineer, Machine Learning Engineer, Applied Scientist, and Generative AI Engineer roles, especially those involving building practical AI products.
+
+Question: What is your most recent co-op offer?
+Answer: I accepted a co-op offer as a Generative AI Product Development Fellow with the Burnes Center for Social Change through the AI for Impact program.
+
+Question: What motivates you to work at the intersection of AI and social impact?
+Answer: I want to build AI systems that solve real problems and improve access and efficiency, especially in domains like healthcare, public services, and education.
+
+Question: What is your most recent research-style project?
+Answer: I completed a project on sentence-level language modeling, where the transformer attends over sentences as unit tokens and predicts the next sentence instead of the next word.
+
+Question: What makes your sentence-level transformer project different from standard LLMs?
+Answer: Standard LLMs attend over token sequences and predict the next token. My approach shifts attention to sentence-level units and focuses on next-sentence prediction, aiming for semantic coherence and long-range reasoning.
+
+Question: What technical areas do you feel strongest in?
+Answer: I am strongest in Python, deep learning, NLP, reinforcement learning, and building end-to-end systems including data processing, model training, APIs, and deployment.
+
+Question: What professional experience do you have?
+Answer: I worked at Wipro in Bengaluru, India as a Python Developer Level 2 and also worked on enterprise data integration as an Informatica IICS developer.
+
+Question: What did you do at Wipro as a Python Developer?
+Answer: I built an internal Flask-based error prediction system using LSTM and NLP-style rule matching on historical logs, integrated REST APIs with SQL, and automated workflows to reduce manual debugging effort.
+
+Question: What was the impact of your automation work at Wipro?
+Answer: The system reduced manual investigation time significantly and improved the speed and consistency of diagnosing recurring issues, while automation saved substantial recurring developer time weekly.
+
+Question: What did you do as an IICS Developer?
+Answer: I designed and implemented ETL workflows and reusable mappings in Informatica IICS, supported deployments across environments using CI/CD tools, and helped with monitoring and operational reliability tasks.
+
+Question: What is one project you are proud of from your coursework?
+Answer: A major project was the Royal Rumble Wrestling Simulation, where I built a multi-agent environment using PPO reinforcement learning and combined optimization techniques like simulated annealing and genetic algorithms.
+
+Question: What did you build in the Royal Rumble project?
+Answer: I built a turn-based environment with wrestlers as agents, implemented PPO training and policy learning, and used additional algorithms to model strategic choices and evolving behavior, with visualization.
+
+Question: What are your main strengths as a candidate?
+Answer: I combine strong technical execution with curiosity and persistence. I like learning deeply, building real systems, and improving through feedback and iteration.
+
+Question: What is your work style like?
+Answer: I am structured and detail-oriented, and I like to plan clearly, execute steadily, and document my work so it is easy for others to understand and build on.
+
+Question: How do you approach learning something new?
+Answer: I learn by building. I start with the fundamentals, implement small versions, test them, and then scale to a full system. I also like reading papers and comparing approaches.
+
+Question: How do you handle not knowing something in AI?
+Answer: I do not claim to know everything. I stay curious, ask good questions, and keep learning. My curiosity is consistent and long-term, and I do not stop improving.
+
+Question: What are your long-term career goals?
+Answer: I want to become an AI scientist or applied researcher and eventually build a startup. I am also interested in pursuing a PhD in the future.
+
+Question: What are your key technical skills?
+Answer: Python, SQL, machine learning, deep learning, NLP, reinforcement learning, transformers, PyTorch, TensorFlow, model evaluation, data processing, and API development.
+
+Question: What tools and frameworks do you use?
+Answer: PyTorch, TensorFlow, Keras, Flask, FastAPI, LangChain, LangGraph, Hugging Face, ChromaDB or vector stores, and common developer tools like Git and Postman.
+
+Question: What do you want the RAG bot to do?
+Answer: I want the bot to answer questions about my background, education, work experience, projects, strengths, and career goals in a professional recruiter-style tone.
+
+Question: How should the bot describe you professionally?
+Answer: It should describe me as an AI graduate student with strong applied skills, real industry experience, and hands-on projects in generative AI, NLP, and reinforcement learning.
+
+Question: What are your hobbies and interests outside of work?
+Answer: I enjoy playing chess, going to the gym, watching movies, and exploring new ideas in AI and technology.
+
+Question: What kind of teammates do you work well with?
+Answer: I work well with people who communicate clearly, share feedback respectfully, and focus on solving the problem together.
+
+Question: What kind of environment helps you perform best?
+Answer: I do well in environments where I can learn continuously, take ownership of work, collaborate with others, and build practical systems that matter.

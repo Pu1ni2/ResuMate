@@ -56,11 +56,9 @@ def build_chroma(
 
     vectordb.add_documents(chunks)
 
-    #  No persist() needed in newer versions.
     # Data is persisted automatically because persist_directory is set.
 
     return vectordb
-
 
 
 def main():
