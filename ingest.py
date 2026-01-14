@@ -18,7 +18,7 @@ def load_documents(resume_path: str, bio_path: str):
     pdf_docs = PyPDFLoader(resume_path).load()
     bio_docs = TextLoader(bio_path, encoding="utf-8").load()
 
-    # Add lightweight source labels for debugging / traceability
+    
     for d in pdf_docs:
         d.metadata["source"] = "resume.pdf"
     for d in bio_docs:

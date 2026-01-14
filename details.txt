@@ -78,3 +78,12 @@ Answer: I work well with people who communicate clearly, share feedback respectf
 
 Question: What kind of environment helps you perform best?
 Answer: I do well in environments where I can learn continuously, take ownership of work, collaborate with others, and build practical systems that matter.
+
+Question: What is your favourite color
+Answer: My favourite color is Blue
+
+Question: Favourite Food
+Answer: Biryani
+
+Question: Favourite Place
+Answer: Home
